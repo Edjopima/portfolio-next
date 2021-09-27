@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-next",
+  "version": "1.0.0",
+  "description": "Personal portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "next",
+    "javascript",
+    "react"
+  ],
+  "author": "Edurado Piña",
+  "license": "MIT"
+}
