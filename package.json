@@ -4,7 +4,9 @@
   "description": "Personal portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "next start",
+    "dev": "next",
+    "build": "next build"
   },
   "keywords": [
     "next",
@@ -12,5 +14,12 @@
     "react"
   ],
   "author": "Edurado Piña",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^17.0.24",
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.4.3"
+  }
 }
