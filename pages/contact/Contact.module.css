@@ -1,0 +1,72 @@
+.contactMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100vw;
+}
+.contactMe h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #52A3ED ;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.contactMe input {
+  width:22rem;
+  border: #52A3ED solid 2px;
+  height: 5vh;
+  padding: 0 1%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  outline: none;
+  color: #52A3ED;
+}
+
+.contactMe textarea {
+  width: 22rem;
+  border: #52A3ED solid 2px;
+  height: 20vh;
+  padding: 1%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  outline: none;
+  color: #52A3ED;
+}
+
+.contactMe input::placeholder{
+  color: #52A3ED;
+  opacity: 0.5;
+}
+.contactMe textarea::placeholder{
+  color: #52A3ED;
+  opacity: 0.5;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 30vh;
+}
+
+.buttonContainer button {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.socialContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 20vh;
+  margin-top: 1rem;
+}
+
+.socialContainer a {
+  transition: all 0.2s ease-in-out;
+  color: #52A3ED;
+}
+
+.socialContainer a:hover {
+  transform: scale(1.1);
+}

@@ -30,3 +30,13 @@
   cursor: pointer;
 }
 
+.white{
+  background-color: #fff;
+  color: #52A3ED;
+}
+
+.blue{
+  background-color: #52A3ED;
+  color: #fff;
+}
+
