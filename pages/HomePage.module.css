@@ -10,7 +10,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   color: #52A3ED;
 }
@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .rightBox h1 {
@@ -46,4 +46,51 @@
   font-size: 1.2rem;
   margin-left: 2%;
   margin-bottom: 20%;
+}
+
+/* About Me Page styles */
+
+.aboutMeBox {
+  align-items: flex-start;
+}
+
+.aboutMeBox h1 {
+  margin-left: 4%;
+  font-weight: 300;
+}
+
+.aboutMeBox strong {
+  font-weight: 800;
+}
+
+.aboutMeBox p {
+  font-weight: 300;
+  font-size: 1.3rem;
+  margin:4%;
+  margin-right: 4%;
+  text-transform: none;
+}
+
+.aboutMe__buttonContainer {
+  width: 100%;
+  display: flex;
+}
+
+.aboutMeBox button {
+  margin: 0;
+  margin-left: 4%;
+}
+
+.aboutMe__imageBox {
+  width: 415px;
+  height: 415px;
+  margin-left: 5%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutMe__imageContainer {
+  align-items: center;
 }

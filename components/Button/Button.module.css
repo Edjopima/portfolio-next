@@ -7,10 +7,28 @@
   margin: 0 auto;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  font-weight: normal;
 }
 .primary:hover {
   transform: scale(1.1);
 }
+
+.secondary{
+  background-color: transparent;
+  text-transform: uppercase;
+  border: none;
+  padding: 2% 4%;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+}
+
+.secondary:hover {
+  transform: scale(1.1);
+}
+
 .blue {
   color: #52A3ED;
   border-color: #52A3ED;

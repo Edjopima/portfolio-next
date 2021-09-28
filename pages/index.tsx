@@ -9,26 +9,26 @@ const HomePage = () => {
       <div className={styles.leftBox}>
         <h1>Let's make your</h1>
         <span>electronic engineer, iot</span>
-        <Button
-          color='blue'
-          type='primary'
-        >
-          <Link href='/projects/iot'>
-            <p>electronic and iot projects</p>
-          </Link>
-        </Button>
+        <Link href='/projects/iot'>
+          <Button
+            color='blue'
+            type='primary'
+          >
+              <p>electronic and iot projects</p>
+          </Button>
+        </Link>
       </div>
       <div className={styles.rightBox}>
         <h1>projects alive</h1>
         <span>and fullstack developer</span>
+        <Link href='/projects/web'>
         <Button
           color='white'
           type='primary'
         >
-          <Link href='/projects/web'>
             <p>web and mobile projects</p>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
     </div>
   );
