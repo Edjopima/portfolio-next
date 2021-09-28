@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  height: 9vh;
+  text-transform: uppercase;
+}
+
+.header__left {
+  width: 50vw;
+  color : #52A3ED; 
+  font-size: 1.2rem;
+  padding: 3vh 3vw;
+}
+
+.header__right {
+  width: 50vw;
+  color: #fff;
+  background-color: #52A3ED;
+  display: flex;
+  justify-content:flex-end;
+  font-size: 1.2rem;
+  padding: 3vh 3vw;
+}
+.title{
+  cursor: pointer;
+}
+.header__item {
+  margin-right: 2vw;
+  cursor: pointer;
+}
+.header__item:after {  
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.header__item:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
