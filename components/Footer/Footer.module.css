@@ -6,3 +6,14 @@
   height: 3vh;
   padding-top: 1vh;
 }
+
+.blue {
+  color: #52A3ED;
+  border-color: #52A3ED;
+}
+
+.white {
+  background-color: #52A3ED;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}

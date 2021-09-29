@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 const Footer: React.FC = () => {
   const router = useRouter();
   return (
-    <div className={styles.footer}>
+    <div className={`${styles.footer} ${styles[router.query.type==='web'? 'white':'blue']}`}>
       <p className="footer__text">Developed by Eduardo Piña, 2021</p>
     </div>
   );
