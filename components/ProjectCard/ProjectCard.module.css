@@ -1,0 +1,45 @@
+.projectCard {
+  width: 15.625rem;
+  margin: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.projectCard:hover {
+  transform: scale(1.1);
+}
+
+.content {
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30vh;
+  border-top: none;
+}
+
+.blue {
+  color: #52A3ED;
+  border-color: #52A3ED;
+}
+
+.white {
+  color: #fff;
+  border-color: #fff;
+}
+
+.title {
+  margin: 3%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.description {
+  margin: 3%;
+}
+
+.projectCard button {
+  margin-bottom: 20%;
+  margin-top: 20%;
+}

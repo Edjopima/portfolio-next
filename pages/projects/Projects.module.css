@@ -1,0 +1,13 @@
+.projects {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.blue {
+  background-color: #52A3ED;
+}
