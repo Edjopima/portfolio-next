@@ -14,7 +14,7 @@
   border: 2px solid;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 30vh;
   border-top: none;
 }
@@ -40,6 +40,5 @@
 }
 
 .projectCard button {
-  margin-bottom: 20%;
-  margin-top: 20%;
+  margin-bottom: 15%;
 }

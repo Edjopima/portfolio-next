@@ -21,8 +21,10 @@ const ProjectCard: FC<Props> = ({project, color}) => {
     <div className={styles.projectCard}>
       <Image src={cover} width={250} height={150} layout="responsive" />
       <div className={`${styles.content} ${styles[color]}`}>
-        <p className={styles.title}>{project.name}</p>
-        <p className={styles.description}>{project.shortDescription}</p>
+        <div>
+          <p className={styles.title}>{project.name}</p>
+          <p className={styles.description}>{project.shortDescription}</p>
+        </div>
         <Button
           color={color}
           type="primary"
