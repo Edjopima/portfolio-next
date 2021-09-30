@@ -2,10 +2,16 @@ import React from 'react';
 import styles from './HomePage.module.css'
 import Button from '../components/Button/Button';
 import Link from 'next/link';
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
-    <div className={styles.homePage}>
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1,transition: { duration: 0.6 }}} 
+      exit={{ opacity: 0 }} 
+      className={styles.homePage}
+    >
       <div className={styles.leftBox}>
         <h1>Let's make your</h1>
         <span>electronic engineer, iot</span>
@@ -30,7 +36,7 @@ const HomePage = () => {
           </Button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

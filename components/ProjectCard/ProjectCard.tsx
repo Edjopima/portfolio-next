@@ -4,6 +4,8 @@ import styles from './ProjectCard.module.css';
 import Image from 'next/image'
 import Button from '../Button/Button';
 import Link from 'next/link';
+import {motion} from 'framer-motion';
+import { fadeInUp } from '../../animations/fadeInUp';
 
 interface Props {
   project: Project
@@ -20,7 +22,11 @@ const ProjectCard: FC<Props> = ({project, color, type}) => {
   const cover : string= getCover()
 
   return (
-    <div className={styles.projectCard}>
+    <motion.div 
+      className={styles.projectCard}
+      exit={{ opacity: 0 }}
+      variants={fadeInUp}
+    >
       <Image src={cover} width={250} height={150} layout="responsive" />
       <div className={`${styles.content} ${styles[color]}`}>
         <div>
@@ -36,7 +42,7 @@ const ProjectCard: FC<Props> = ({project, color, type}) => {
           </Button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

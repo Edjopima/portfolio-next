@@ -4,6 +4,9 @@ import { Project } from '../../../types/Projects.interface';
 import ProjectCard from '../../../components/ProjectCard/ProjectCard';
 import { useRouter } from 'next/router';
 import styles from './Projects.module.css';
+import { motion } from "framer-motion";
+import { fadeInUp } from '../../../animations/fadeInUp';
+import { stagger } from '../../../animations/stagger';
 
 export const getStaticPaths = async () => {
   return {
@@ -37,7 +40,16 @@ export const getStaticProps = async ( {params} : Params ) => {
 const Projects = ({projectList}:{projectList:Array<Project>}) => {
   const {query:{type}} =  useRouter();
   return (
-    <div className={`${styles.projects} ${styles[type==='web'? 'blue':'white']}`}>
+    <motion.div 
+      exit={{ opacity: 0 }}
+      initial='initial'
+      animate='animate'
+      className={styles.projects}
+    >
+      <motion.div 
+        className={`${styles.projects} ${styles[type==='web'? 'blue':'white']}`}
+        variants={stagger}  
+      >
       {projectList.map((project:Project) => 
       <ProjectCard
         key={project.id}
@@ -45,7 +57,8 @@ const Projects = ({projectList}:{projectList:Array<Project>}) => {
         color={type==='web'? 'white':'blue'}
         type={type as string}
       />)}
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

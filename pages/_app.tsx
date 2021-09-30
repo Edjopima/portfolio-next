@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import Head  from 'next/head'
 import Layout from '../components/Layout'
+import { AnimatePresence } from "framer-motion";
 import '../global.css'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -9,7 +10,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <title>Eduardo Piña</title>
       </Head>
-      <Component {...pageProps} />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} />
+      </AnimatePresence>
     </Layout>
   )
 }

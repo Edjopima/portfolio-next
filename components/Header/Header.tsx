@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 const Header : React.FC = () => {
   const router = useRouter();
@@ -51,7 +52,12 @@ const Header : React.FC = () => {
   const rightColor = router.query.type==='iot' || router.pathname === '/contact'?'white':'blue'
 
   return (
-    <header className={styles.header}>
+    <motion.header 
+      className={styles.header}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1,transition: { duration: 0.6 }}} 
+      exit={{ opacity: 0 }}
+    >
       <div className={`${styles.header__left} ${styles[leftColor]} `}>
         <Link href="/" >
           <span className={styles.title}>Eduardo Piña</span>
@@ -64,7 +70,7 @@ const Header : React.FC = () => {
           </Link>
         )}
       </div>
-    </header>
+    </motion.header>
   );
 }
 
