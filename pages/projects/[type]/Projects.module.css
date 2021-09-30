@@ -13,15 +13,21 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content:center;
   align-items: center;
   flex-wrap: wrap;
   margin: auto;
 }
 
+.imageBox {
+  width: 30rem;
+  margin-bottom: 2%;
+  border: 10px solid #fff;
+}
+
 .blue {
   color: #fff;
   background-color: #52A3ED;
+  border-color: #52A3ED;
 }
 
 .white {
@@ -29,17 +35,14 @@
   color: #52A3ED;
 }
 
-.imageBox {
-  width: 40vw;
-  height: 20vh;
-}
 
 .projectDetail h1 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
+  text-align: center;
 }
 
 .projectDetail p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 60vw;
   text-align: center;
   margin-bottom: 5%;
@@ -47,4 +50,21 @@
 
 .projectDetail h2 {
   font-size: 1.8rem;
+}
+
+.repositories {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+  margin-top: 1rem;
+}
+
+.repositories a {
+  width: 10rem;
+  text-decoration: none;
+  margin-bottom: 5%;
+}
+
+.repositories button {
+  width: 10rem;
 }

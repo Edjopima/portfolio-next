@@ -7,6 +7,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import github from '../../../public/images/github.svg';
 import Button from '../../../components/Button/Button';
+import Link from 'next/link'
 
 export const getStaticPaths = async () => {
   return {
@@ -61,18 +62,20 @@ const ProjectPage: NextPage<Props> = ({project}) => {
       <div className={styles.description}>
         <p>{project.description}</p>
       </div>
-      <div className={styles.imageBox}>
-        <Image src={image} alt={project.name} width={300} height={200} layout='responsive'/>
+      <div className={`${styles.imageBox} ${styles[type==='web'?'white':'blue']}`}>
+        <Image src={image} alt={project.name} width={300} height={180} layout='responsive'/>
       </div>
       <h2>Repositories:</h2>
       <div className={styles.repositories}>
         {project.repos.map((repo, index) => (
-          <Button
-            type='primary'
-            color={type==='web'?'blue':'white'}
-          >
-            {repo.name}
-          </Button>
+          <a key={index} href={repo.url} target='_blank'>
+            <Button
+              type='primary'
+              color={type==='web'?'white':'blue'}
+            >
+              {repo.name}
+            </Button>
+          </a>
         ))}
       </div>
     </div>
