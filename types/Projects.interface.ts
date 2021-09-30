@@ -1,3 +1,8 @@
+interface Repo {
+  name: string;
+  url: string;
+}
+
 export interface Project {
   id: number;
   name: string;
@@ -5,5 +10,5 @@ export interface Project {
   description: string;
   cover: string;
   image: string;
-  repos: Array<string>;
+  repos: Array<Repo>;
 }

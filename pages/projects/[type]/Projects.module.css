@@ -8,6 +8,43 @@
   margin: auto;
 }
 
+.projectDetail {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
 .blue {
+  color: #fff;
   background-color: #52A3ED;
+}
+
+.white {
+  background-color: #fff;
+  color: #52A3ED;
+}
+
+.imageBox {
+  width: 40vw;
+  height: 20vh;
+}
+
+.projectDetail h1 {
+  font-size: 2.8rem;
+}
+
+.projectDetail p {
+  font-size: 1.2rem;
+  width: 60vw;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.projectDetail h2 {
+  font-size: 1.8rem;
 }

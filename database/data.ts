@@ -1,4 +1,4 @@
-import { Project } from "../types/Projects.interface"; 
+import { Project } from "../types/Projects.interface";
 
 export const webProjects: Array<Project> = [
   {
@@ -8,7 +8,19 @@ export const webProjects: Array<Project> = [
     description: 'administrative applications suite conformed by a web app made in react, a mobile app made using react native and an API with express. Constantly updating',
     cover: 'inpimaca-api.jpg',
     image: "inpimaca-api.jpg",
-    repos:[],
+    repos:[{
+      name: 'API', 
+      url: 'https://github.com/Edjopima/inpimaca-api'
+      },
+      {
+        name: 'Web App',
+        url: 'https://github.com/Edjopima/inpimaca-app'
+      },
+      {
+        name: 'Mobile App',
+        url: 'https://github.com/Edjopima/inpimacaMobileApp',
+      }
+    ],
   },
   {
     id: 2,
@@ -17,7 +29,15 @@ export const webProjects: Array<Project> = [
     description: 'Personal portfolio, made in react and recently unpdated to Next.JS',
     cover: 'portfolio.png',
     image: "portfolio.png",
-    repos:[],
+    repos:[{
+      name: 'Portfolio',
+      url: 'https://github.com/Edjopima/portfolio-next'
+    },
+    {
+      name: 'Portfolio Mail Server',
+      url: 'https://github.com/Edjopima/PortfolioServer',
+    }
+    ],
   },
   {
     id: 3,
@@ -26,7 +46,10 @@ export const webProjects: Array<Project> = [
     description: 'Code Challenge for Basement Studio. it is maded using Next.JS, TypeScript and tailwind css',
     cover: 'basement.png',
     image: "basement-web.png",
-    repos:[],
+    repos:[{
+      name: 'Basement Challenge',
+      url: 'https://github.com/Edjopima/basement-challenge'
+    }],
   }
 ];
 
@@ -38,7 +61,20 @@ export const iotProjects: Array<Project> = [
     description: 'Access control system, consist in a rfid sensor and an arduino, also has an electron app',
     cover: 'rfid.jpg',
     image: "rfid.jpg",
-    repos:[],
+    repos:[
+      {
+        name: 'Desktop App',
+        url: 'https://github.com/Edjopima/access-control'
+      },
+      {
+        name: 'Arduino',
+        url: 'https://github.com/Edjopima/rfid-esp8266'
+      },
+      {
+        name: 'API',
+        url: 'https://github.com/Edjopima/accessControlAPI'
+      }
+    ],
   },
   {
     id:2,
@@ -47,7 +83,10 @@ export const iotProjects: Array<Project> = [
     description: 'Ambient conditions sensor using arduino, and python to send an email alert when the system get a weird measure, made during my internship',
     cover: 'HumiditySensor.png',
     image: "HumiditySensor.png",
-    repos:[],
+    repos:[{
+      name: 'Humidity Sensor',
+      url: 'https://github.com/Edjopima/humidity-sensor'
+    }],
   },
   {
     id:3,
