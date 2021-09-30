@@ -48,8 +48,8 @@ const Header : React.FC = () => {
 
   const headerOptions = setHeaderOptions(router.pathname);
 
-  const leftColor = router.query.type==='web'?'blue':'white'
-  const rightColor = router.query.type==='iot' || router.pathname === '/contact'?'white':'blue'
+  const leftColor = (router.query.type==='web' && !router.query.id)?'blue':'white'
+  const rightColor = (router.query.type==='iot' && !router.query.id)|| router.pathname === '/contact'?'white':'blue'
 
   return (
     <motion.header 

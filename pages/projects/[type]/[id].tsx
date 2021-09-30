@@ -5,9 +5,10 @@ import { useRouter } from 'next/router';
 import styles from './Projects.module.css';
 import { NextPage } from 'next';
 import Image from 'next/image';
-import github from '../../../public/images/github.svg';
 import Button from '../../../components/Button/Button';
-import Link from 'next/link'
+import { motion } from 'framer-motion';
+import { stagger } from '../../../animations/stagger';
+import { fadeInUp } from '../../../animations/fadeInUp';
 
 export const getStaticPaths = async () => {
   return {
@@ -57,28 +58,53 @@ const ProjectPage: NextPage<Props> = ({project}) => {
   const image = getImage()
 
   return (
-    <div className={`${styles.projectDetail} ${styles[type==='web'?'blue':'white']}`}>
-      <h1>{project.name}</h1>
-      <div className={styles.description}>
-        <p>{project.description}</p>
-      </div>
-      <div className={`${styles.imageBox} ${styles[type==='web'?'white':'blue']}`}>
-        <Image src={image} alt={project.name} width={300} height={180} layout='responsive'/>
-      </div>
-      <h2>Repositories:</h2>
-      <div className={styles.repositories}>
+    <motion.div 
+      className={styles.projectDetail}
+      exit={{ opacity: 0 }}
+      initial='initial'
+      animate='animate'
+    >
+      <motion.div 
+        className={styles.leftBox}
+        initial = {{ opacity: 0}}
+        animate = {{ opacity: 1, transition: {duration: 0.6}}}
+      >
+        <h1>{project.name}</h1>
+        <div className={styles.description}>
+          <p>{project.description}</p>
+        </div>
+        {project.repos.length>0 && <h2>Repositories:</h2>}
+      <motion.div 
+        className={styles.repositories}
+        variants={stagger}
+      >
         {project.repos.map((repo, index) => (
-          <a key={index} href={repo.url} target='_blank'>
+          <motion.a 
+            key={index} 
+            href={repo.url} 
+            target='_blank'
+            variants={fadeInUp}
+          >
             <Button
               type='primary'
-              color={type==='web'?'white':'blue'}
+              color='blue'
             >
               {repo.name}
             </Button>
-          </a>
+          </motion.a>
         ))}
-      </div>
-    </div>
+      </motion.div>
+      </motion.div>
+      <motion.div 
+        className={styles.rightBox}
+        initial = {{ opacity: 0}}
+        animate = {{opacity: 1, transition: {duration: 0.6}}}
+      >
+        <div className={`${styles.imageBox} ${styles.white}`}>
+          <Image src={image} alt={project.name} width={300} height={180} layout='responsive'/>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
