@@ -33,7 +33,7 @@ const AboutMe = () => {
       </div>
       <div className={`${styles.rightBox} ${styles.aboutMe__imageContainer}`}>
         <div className={styles.aboutMe__imageBox}>
-          <Image src={profilePic} alt='Profile Pic' width={400} height={400}/>
+          <Image src={profilePic} height={400} width={400} className={styles.aboutMe__image} layout='responsive' />
         </div>
       </div>
     </div>

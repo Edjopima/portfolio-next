@@ -58,7 +58,7 @@
 .socialContainer {
   display: flex;
   justify-content: space-between;
-  width: 20vh;
+  width: 18vh;
   margin-top: 1rem;
 }
 
@@ -69,4 +69,13 @@
 
 .socialContainer a:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 500px) {
+  .contactMe input {
+    height: 3vh;
+  }
+  .buttonContainer {
+    width: 25vh;
+  }
 }

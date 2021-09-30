@@ -48,16 +48,16 @@ const Contact = () => {
       </div>
       <div className={styles.socialContainer}>
         <a href="https://github.com/edjopima" target="_blank" >
-          <Image src={github} width={40} height={40}/>
+          <Image src={github} width={30} height={30}/>
         </a>
         <a href="https://twitter.com/edjopima" target="_blank" >
-          <Image src={twitter} width={40} height={40}/>
+          <Image src={twitter} width={30} height={30}/>
         </a>
         <a href="https://www.linkedin.com/in/edjopima/" target="_blank" >
-          <Image src={linkedin} width={40} height={40}/>
+          <Image src={linkedin} width={30} height={30}/>
         </a>
         <a href="https://www.instagram.com/edjopima/" target="_blank" >
-          <Image src={instagram} width={40} height={40}/>
+          <Image src={instagram} width={30} height={30}/>
         </a>
       </div>
     </div>

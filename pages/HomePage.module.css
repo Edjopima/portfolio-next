@@ -57,10 +57,13 @@
 .aboutMeBox h1 {
   margin-left: 4%;
   font-weight: 300;
+  font-size: 2.5rem;
 }
 
 .aboutMeBox strong {
   font-weight: 800;
+  font-size: 2.5rem;
+
 }
 
 .aboutMeBox p {
@@ -82,15 +85,40 @@
 }
 
 .aboutMe__imageBox {
-  width: 415px;
-  height: 415px;
-  margin-left: 5%;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 25rem;
+  height: 25rem;
 }
 
 .aboutMe__imageContainer {
   align-items: center;
+}
+
+.aboutMe__image {
+  border: 10px solid #fff !important;
+}
+
+@media screen and (max-width: 900px) {
+  .aboutMe__imageBox {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .leftBox h1{
+    font-size: 2rem;
+  }
+  .leftBox span {
+    font-size: 1.1rem;
+  }
+  .rightBox h1{
+    font-size: 2rem;
+  }
+  .rightBox span {
+    font-size: 1.1rem;
+  }
+  .aboutMe__imageBox {
+    width: 17rem;
+    height: 17rem;
+  }
 }
