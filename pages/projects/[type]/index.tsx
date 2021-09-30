@@ -1,8 +1,7 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
-import { GetStaticProps } from 'next';
-import { Project } from '../../types/Projects.interface';
-import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import { Project } from '../../../types/Projects.interface';
+import ProjectCard from '../../../components/ProjectCard/ProjectCard';
 import { useRouter } from 'next/router';
 import styles from './Projects.module.css';
 
@@ -44,6 +43,7 @@ const Projects = ({projectList}:{projectList:Array<Project>}) => {
         key={project.id}
         project={project}
         color={type==='web'? 'white':'blue'}
+        type={type as string}
       />)}
     </div>
   );

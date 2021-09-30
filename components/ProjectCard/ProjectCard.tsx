@@ -3,13 +3,15 @@ import { Project } from '../../types/Projects.interface';
 import styles from './ProjectCard.module.css';
 import Image from 'next/image'
 import Button from '../Button/Button';
+import Link from 'next/link';
 
 interface Props {
   project: Project
   color: string
+  type:string
 }
 
-const ProjectCard: FC<Props> = ({project, color}) => {
+const ProjectCard: FC<Props> = ({project, color, type}) => {
 
   const getCover : () => string = () => {
     return project.cover ? require(`../../public/images/${project.cover}`) : 'https://via.placeholder.com/300x200'
@@ -25,12 +27,14 @@ const ProjectCard: FC<Props> = ({project, color}) => {
           <p className={styles.title}>{project.name}</p>
           <p className={styles.description}>{project.shortDescription}</p>
         </div>
-        <Button
-          color={color}
-          type="primary"
-        >
-          VIEW MORE
-        </Button>
+        <Link href={`/projects/${type}/${project.id}`}>
+          <Button
+            color={color}
+            type="primary"
+          >
+            VIEW MORE
+          </Button>
+        </Link>
       </div>
     </div>
   );
