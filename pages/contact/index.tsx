@@ -17,14 +17,47 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [subject,setSubject] = useState('');
 
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [messageStatus, setMessageStatus] = useState('SEND');
+  const [error, setError] = useState('');
+
+  function validateEmail(email:string) {
+    const re:RegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
   const sendMessage = () => {
-    console.log(email, message, name, subject);
+    if ( !email || !message || !name || !subject ) {
+      setError('Please fill in all fields');
+    } else if (!validateEmail(email)) {
+      setError('Please enter a valid email');
+    }
+    else {
+      setButtonDisabled(true);
+      setMessageStatus('SENDING');
+      fetch('https://portfolio-server-nodemailer.herokuapp.com/sendMail', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            name,
+            email,
+            subject,
+            message
+        })
+        })
+        .then(response => response.json())
+        .then(data=>setMessageStatus('SENT'))
+        .catch(error => setError('Error sending message'));
+    }
   }
   const clearInputs = () => {
     setEmail('');
     setMessage('');
     setName('');
     setSubject('');
+    setMessageStatus('SEND');
+    setButtonDisabled(false);
+    setError('');
   }
 
   return (
@@ -40,6 +73,7 @@ const Contact = () => {
         animate={{ opacity: 1,transition: { duration: 0.6 }}} 
       >
         <h1>Contact Me</h1>
+        {error && <p className={styles.error}>{error}</p>}
         <input type="text" placeholder='NAME' value={name} onChange={(e)=>setName(e.target.value)}/>
         <input type="text" placeholder='EMAIL' value={email} onChange={(e)=>setEmail(e.target.value)}/>
         <input type="text" placeholder='SUBJECT' value={subject} onChange={(e)=>setSubject(e.target.value)}/>
@@ -49,8 +83,9 @@ const Contact = () => {
             type='primary'
             color='blue'
             onClick={sendMessage}
+            disabled={buttonDisabled}
           >
-            Send
+            {messageStatus}
           </Button>
           <Button
             type='secondary'

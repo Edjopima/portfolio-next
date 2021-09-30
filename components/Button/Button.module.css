@@ -13,6 +13,13 @@
   transform: scale(1.1);
 }
 
+.primary:disabled {
+  transition: none;
+}
+.primary:hover:disabled {
+  transform: none;
+}
+
 .secondary{
   background-color: transparent;
   text-transform: uppercase;
@@ -37,6 +44,10 @@
   background-color: #52A3ED;
   color: #fff;
 }
+.blue:hover:disabled {
+  background-color: #fff;
+  color: #52A3ED;
+}
 .white {
   color: #fff;
   border-color: #fff;
@@ -45,3 +56,4 @@
   background-color: #fff;
   color: #52A3ED;
 }
+

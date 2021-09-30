@@ -10,7 +10,7 @@
   font-size: 3rem;
   font-weight: bold;
   color: #52A3ED ;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
@@ -69,6 +69,13 @@
 
 .socialContainer a:hover {
   transform: scale(1.1);
+}
+
+.error {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 2%;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 500px) {
